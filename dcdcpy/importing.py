@@ -1,9 +1,15 @@
 """Import data connector data from Amazon S3."""
 
+from os import environ
+from boto3.session import Session
+from awswrangler.s3 import read_csv
+from datetime import date
+from . import internal
+
 def create_s3_session(
-        aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
-        aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"],
-        region_name=os.environ["AWS_DEFAULT_REGION"]):
+        aws_access_key_id=environ["AWS_ACCESS_KEY_ID"],
+        aws_secret_access_key=environ["AWS_SECRET_ACCESS_KEY"],
+        region_name=environ["AWS_DEFAULT_REGION"]):
     """
     Create an Amazon Amazon Simple Storage Service Session (where DataCamp
     Data Connector data is hosted.)
@@ -30,7 +36,7 @@ def create_s3_session(
     A boto3 session object. See
     https://boto3.amazonaws.com/v1/documentation/api/latest/reference/core/session.html
     """
-    return boto3.session.Session(
+    return Session(                         # boto3.session.Session
         aws_access_key_id=aws_access_key_id,
         aws_secret_access_key=aws_secret_access_key,
         region_name=region_name)
@@ -55,7 +61,7 @@ DC_DATASETS = ['assessment_dim',
  'user_team_bridge']
 
 def get_dc_datasets(s3_sess, datasets=DC_DATASETS, date="latest",
-                    bucket=os.environ["AWS_S3_BUCKET_NAME"]):
+                    bucket=environ["AWS_S3_BUCKET_NAME"]):
     """
     Gets DataCamp Data Connector datasets from S3.
     
@@ -68,7 +74,7 @@ def get_dc_datasets(s3_sess, datasets=DC_DATASETS, date="latest",
          Names of the datasets to import.
     date :
          (Default value = "latest")
-         A Date or string in "\%Y-\%m-\%d" format denoting the date at 
+         A Date or string in "%Y-%m-%d" format denoting the date at 
          which to retrieve data for. Use "latest" to get the most recent data.
     bucket :
          (Default value = os.environ["AWS_S3_BUCKET_NAME"])
@@ -82,7 +88,10 @@ def get_dc_datasets(s3_sess, datasets=DC_DATASETS, date="latest",
     assert set(datasets).issubset(DC_DATASETS), \
         "Only datasets in DC_DATASETS are available."
     if date != "latest":
-        date = date.strftime("%Y-%m-%d")
+        if type(today) == datetime.date:
+            date = date.strftime("%Y-%m-%d")
+        else:
+            assert is_yyyymmdd(date)
     
     def read_dataset(dataset):
         """
@@ -98,7 +107,7 @@ def get_dc_datasets(s3_sess, datasets=DC_DATASETS, date="latest",
         A pandas DataFrame.
         """
         filename = f"s3://{bucket}/{date}/{dataset}.csv"
-        return wr.s3.read_csv(filename)
+        return read_csv(filename) #  wr.s3.read_csv()
     
     dataframes = [read_dataset(dataset) for dataset in datasets]
     return dict(zip(datasets, dataframes))
