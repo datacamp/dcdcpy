@@ -37,5 +37,5 @@ dc = dcdcpy.get_dc_datasets(s3_sess)
 You can specify which datasets are returned, on which date.
 
 ```py
-dc_team = get_dc_datasets(s3_sess, ["team_dim"], datetime.date.today() - datetime.timedelta(days=7))
+dc_team = dcdcpy.get_dc_datasets(s3_sess, ["team_dim"], datetime.date.today() - datetime.timedelta(days=7))
 ```
