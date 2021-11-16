@@ -1,41 +1,25 @@
 # dcdcpy
 
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-
-dcdcpy contains utilities to work with DataCamp Data Connector.
-
-This package is designed to be used by administrators and managers of
-DataCamp groups. Some prior experience of writing reports with Python is
-recommended.
+DataCamp Data Connector utilities in Python.
 
 ## Installation
 
-You can install the development version with:
-
-```
-pip install git+https://github.com/datacamp/dcdcpy.git#egg=dcdcpy
+```bash
+$ pip install dcdcpy
 ```
 
-## Importing data
+## Usage
 
-Importing data requires two commands. First you set up the connector to
-S3, then you get the datasets. By default, all the data is returned for
-the most recent date.
+- TODO
 
-```py
-import dcdcpy
+## Contributing
 
-# Setup Amazon S3 session
-s3_sess = dcdcpy.create_s3_session()
+Interested in contributing? Check out the contributing guidelines. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
 
-# Retrieve all data on the latest date available
-dc = dcdcpy.get_dc_datasets(s3_sess)
-```
+## License
 
+`dcdcpy` was created by Richard Cotton. It is licensed under the terms of the MIT license.
 
-You can specify which datasets are returned, on which date.
+## Credits
 
-```py
-dc_team = dcdcpy.get_dc_datasets(s3_sess, ["team_dim"], datetime.date.today() - datetime.timedelta(days=7))
-```
+`dcdcpy` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
