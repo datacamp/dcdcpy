@@ -9,6 +9,7 @@ from pyathena import connect
 from IPython.display import display, Markdown
 
 
+@lru_cache(maxsize=None)
 def list_tables_s3():
     s3 = boto3.resource("s3")
     my_bucket = s3.Bucket(os.getenv("AWS_BUCKET"))
@@ -16,23 +17,6 @@ def list_tables_s3():
         obj.key.split("/")[1].split(".")[0]
         for obj in my_bucket.objects.filter(Delimiter="/", Prefix=f"latest/")
     ]
-
-
-def read_table_s3(table_name, conn=None):
-    @lru_cache(maxsize=None)
-    def read_table(date="latest"):
-        return wr.s3.read_csv(f"s3://{os.getenv('AWS_BUCKET')}/{date}/{table_name}.csv")
-
-    return read_table
-
-
-def read_table_athena(table_name, conn):
-    @lru_cache(maxsize=None)
-    def read_table(date="latest"):
-        s3_bucket = os.getenv("AWS_BUCKET")
-        return pd.read_sql_query(f'SELECT * FROM "{s3_bucket}"."{table_name}"', conn)
-
-    return read_table
 
 
 @lru_cache(maxsize=None)
@@ -50,6 +34,17 @@ def get_docs_bic():
             "columns": doc[["column", "description"]].to_dict(orient="records"),
         }
     return data
+
+
+@lru_cache(maxsize=None)
+def read_table_s3(table_name, conn=None, date="latest"):
+    return wr.s3.read_csv(f"s3://{os.getenv('AWS_BUCKET')}/{date}/{table_name}.csv")
+
+
+@lru_cache(maxsize=None)
+def read_table_athena(table_name, conn, date="latest"):
+    s3_bucket = os.getenv("AWS_BUCKET")
+    return pd.read_sql_query(f'SELECT * FROM "{s3_bucket}"."{table_name}"', conn)
 
 
 HELP_DOCS = get_docs_bic()
@@ -72,17 +67,24 @@ TEMPLATE = """
 """
 
 
+def display_help(table_name):
+    tpl = Template(TEMPLATE)
+    out = tpl.render(HELP_DOCS[table_name])
+    return display(Markdown(out))
+
+
 class ReadTable:
-    def __init__(self, table_name, source="s3", conn=None):
+    def __init__(self, table_name, date="latest", source="s3", conn=None):
         self.table_name = table_name
         self.conn = conn
+        self.date = date
         if source == "s3":
-            self.table = read_table_s3(table_name, conn)
+            self.table = read_table_s3
         else:
-            self.table = read_table_athena(table_name, conn)
+            self.table = read_table_athena
 
     def __call__(self, *args, **kwargs):
-        return self.table(*args, **kwargs)
+        return self.table(self.table_name, self.conn, self.date)
 
     def _repr_html_(self):
         tpl = Template(TEMPLATE)
@@ -91,14 +93,20 @@ class ReadTable:
 
 
 class DataConnector:
-    def __init__(self, source="s3"):
+    def __init__(self, date="latest", source="s3"):
+        self.date = date
+        self.source = source
         self.tables = list_tables_s3()
-        if source == "s3":
-            conn = None
+        if self.source == "s3":
+            self.conn = None
         else:
-            conn = connect(
+            self.conn = connect(
                 s3_staging_dir=os.getenv("AWS_ATHENA_S3_STAGING_DIR"),
                 region_name=os.getenv("AWS_REGION"),
             )
         for table in self.tables:
-            setattr(self, table, ReadTable(table, source=source, conn=conn))
+            setattr(
+                self,
+                table,
+                ReadTable(table, date=self.date, conn=self.conn, source=self.source),
+            )
