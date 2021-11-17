@@ -61,23 +61,27 @@ TEMPLATE = """
 
 
 def display_help(table_name):
-    def help():
-        docs = get_docs_bic()
-        tpl = Template(TEMPLATE)
-        out = tpl.render(docs[table_name])
-        return display(Markdown(out))
+    docs = get_docs_bic()
+    tpl = Template(TEMPLATE)
+    out = tpl.render(docs[table_name])
+    return display(Markdown(out))
 
-    return help
+
+class ReadTable:
+    def __init__(self, table_name, conn=None):
+        self.table_name = table_name
+        self.conn = conn
+        self.table = read_table_s3(table_name, conn)
+
+    def __call__(self, *args, **kwargs):
+        return self.table(*args, **kwargs)
+
+    def _repr_html_(self):
+        return display_help(self.table_name)
 
 
 class DataConnector:
     def __init__(self, source="s3"):
         self.tables = list_tables_s3()
-        if source == "s3":
-            read_table_bic = read_table_s3
-        else:
-            read_table_bic = read_table_s3
-
         for table in self.tables:
-            setattr(self, table, read_table_bic(table, None))
-            setattr(self, f"{table}_help", display_help(table))
+            setattr(self, table, ReadTable(table, None))
