@@ -2,15 +2,33 @@
 
 DataCamp Data Connector utilities in Python.
 
+This package contains utilities to work with DataCamp Data Connector. It is designed to be used by administrators and managers of DataCamp groups. Some prior experience of writing reports with Python is recommended.
+
 ## Installation
 
+You can install the development version with:
+
 ```bash
-$ pip install dcdcpy
+$ pip install git+https://github.com/datacamp/dcdcpy.git#egg=dcdcpy
 ```
+
+## Getting Started
+
+Before you begin, you need to enable Data Connector in your DataCamp group, and 
+set S3 credentials as environment variables, as described in this [this Support article](https://support.datacamp.com/hc/en-us/articles/4405070893591-DataCamp-Data-Connector-A-Step-by-Step-Configuration-Guide-for-Automated-Data-Exports).
+If in doubt, speak to your Customer Success Manager.
+
+## Accessing Data
+
+You can access any of the tables in the data connector by initializing it using the `DataConnector()` class.
 
 ## Usage
 
-- TODO
+```python
+from dcdcpy.dcdcpy import DataConnector
+dc = DataConnector()
+dc.assessment_dim()
+```
 
 ## Contributing
 
