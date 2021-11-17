@@ -12,6 +12,7 @@ awswrangler = "^2.12.1"
 boto3 = "^1.17.22"
 pandas = "^1.2.4"
 Jinja2 = "^3.0.1"
+pyathena = "^2.3.0"
 
 [tool.poetry.dev-dependencies]
 environs = "^9.3.5"

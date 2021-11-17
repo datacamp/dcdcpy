@@ -396,6 +396,23 @@ python-versions = ">=3.6"
 numpy = ">=1.16.6"
 
 [[package]]
+name = "pyathena"
+version = "2.3.0"
+description = "Python DB API 2.0 (PEP 249) client for Amazon Athena"
+category = "main"
+optional = false
+python-versions = ">=3.6.1,<4.0.0"
+
+[package.dependencies]
+boto3 = ">=1.4.4"
+botocore = ">=1.5.52"
+tenacity = ">=4.1.0"
+
+[package.extras]
+pandas = ["pandas (>=1.0.0)", "pyarrow (>=1.0.0)"]
+sqlalchemy = ["sqlalchemy (>=1.0.0,<2.0.0)"]
+
+[[package]]
 name = "pymysql"
 version = "1.0.2"
 description = "Pure Python MySQL Driver"
@@ -557,6 +574,17 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "tenacity"
+version = "8.0.1"
+description = "Retry code until it succeeds"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+doc = ["reno", "sphinx", "tornado (>=4.5)"]
+
+[[package]]
 name = "tomli"
 version = "1.2.2"
 description = "A lil' TOML parser"
@@ -588,7 +616,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<3.10"
-content-hash = "8ec2255e511f499004507f8d0394e4b5911b74393bf3855a565b4a4fcd32ea9a"
+content-hash = "b693b00e70123dcbec0193b972ea479a6ce2d083d62010791d98cc3a8ce6b4a7"
 
 [metadata.files]
 asn1crypto = [
@@ -886,6 +914,10 @@ pyarrow = [
     {file = "pyarrow-5.0.0-cp39-cp39-win_amd64.whl", hash = "sha256:4d8adda1892ef4553c4804af7f67cce484f4d6371564e2d8374b8e2bc85293e2"},
     {file = "pyarrow-5.0.0.tar.gz", hash = "sha256:24e64ea33eed07441cc0e80c949e3a1b48211a1add8953268391d250f4d39922"},
 ]
+pyathena = [
+    {file = "PyAthena-2.3.0-py3-none-any.whl", hash = "sha256:aa48d4675825d180e712ffa645308f7a3e8b3918efe2d77211812b847c8b6fd0"},
+    {file = "PyAthena-2.3.0.tar.gz", hash = "sha256:856afea495efd5b8e8c80cc06e6e4c9e77e662898aed1f528a787be54731d421"},
+]
 pymysql = [
     {file = "PyMySQL-1.0.2-py3-none-any.whl", hash = "sha256:41fc3a0c5013d5f039639442321185532e3e2c8924687abe6537de157d403641"},
     {file = "PyMySQL-1.0.2.tar.gz", hash = "sha256:816927a350f38d56072aeca5dfb10221fe1dc653745853d30a216637f5d7ad36"},
@@ -987,6 +1019,10 @@ six = [
 soupsieve = [
     {file = "soupsieve-2.3.1-py3-none-any.whl", hash = "sha256:1a3cca2617c6b38c0343ed661b1fa5de5637f257d4fe22bd9f1338010a1efefb"},
     {file = "soupsieve-2.3.1.tar.gz", hash = "sha256:b8d49b1cd4f037c7082a9683dfa1801aa2597fb11c3a1155b7a5b94829b4f1f9"},
+]
+tenacity = [
+    {file = "tenacity-8.0.1-py3-none-any.whl", hash = "sha256:f78f4ea81b0fabc06728c11dc2a8c01277bfc5181b321a4770471902e3eb844a"},
+    {file = "tenacity-8.0.1.tar.gz", hash = "sha256:43242a20e3e73291a28bcbcacfd6e000b02d3857a9a9fff56b297a27afdc932f"},
 ]
 tomli = [
     {file = "tomli-1.2.2-py3-none-any.whl", hash = "sha256:f04066f68f5554911363063a30b108d2b5a5b1a010aa8b6132af78489fe3aade"},
