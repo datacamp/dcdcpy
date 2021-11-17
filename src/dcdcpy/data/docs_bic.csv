@@ -1,0 +1,391 @@
+table_name,table_description,column,description
+assessment_dim,"The assessment dimension provides descriptive data about a specific  assessment.
+",assessment_id,The unique id of the assessment id.
+assessment_dim,"The assessment dimension provides descriptive data about a specific  assessment.
+",title,The title of the assessment.
+assessment_dim,"The assessment dimension provides descriptive data about a specific  assessment.
+",slug,The slug of The assessment.
+assessment_dim,"The assessment dimension provides descriptive data about a specific  assessment.
+",technology,"The assessment technology (e.g., Python, R, SQL)
+"
+assessment_dim,"The assessment dimension provides descriptive data about a specific  assessment.
+",id,"[DEPRECATED] Use assessment_id instead.
+"
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",chapter_id,The unique id of the chapter id.
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",title,The title of the chapter.
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",slug,The slug of the chapter.
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",xp,"The maxmimum number of XP a user can get by completing the chapter.
+"
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",technology,"The course technology  (e.g., Tableau, SQL, Python, R, ...).
+"
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",topic,"The course topic (e.g., Data visualization, Programmaing, Machine Learning, ...).
+"
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",nb_exercises,"The number of exercises in the chapter.
+"
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",course_title,"The title of the course the chapter belongs to.
+"
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",course_slug,"The slug of the course the chapter belongs to.
+"
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",course_xp,"The maximum number of XP a user can get by completing the course  the chapter belongs to.
+"
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",course_description,"The description of the course the chapter belongs to.
+"
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",course_short_description,"A shorter description of the course the chapter belongs to.
+"
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",course_launched_date,"The date on which the course went live.
+"
+chapter_dim,"The chapter dimension provides descriptive data about a specific chapter.  Because the model considers users’ progress on all chapters (i.e., even  chapters that are no longer available), there is a specific row with the  id = -1. This row is used in the chapter fact table to refer to a deleted  chapter.
+",id,"[DEPRECATED] Use chapter_id instead.
+"
+course_dim,"The course dimension provides descriptive data about a specific course.  Because the model considers users’ progress on all courses (i.e., even  courses that are no longer available), there is a specific row with the  id = -1. This row is used in the course fact table to refer to a deleted  course. 
+",course_id,The unique id of the course.
+course_dim,"The course dimension provides descriptive data about a specific course.  Because the model considers users’ progress on all courses (i.e., even  courses that are no longer available), there is a specific row with the  id = -1. This row is used in the course fact table to refer to a deleted  course. 
+",title,The title of the course.
+course_dim,"The course dimension provides descriptive data about a specific course.  Because the model considers users’ progress on all courses (i.e., even  courses that are no longer available), there is a specific row with the  id = -1. This row is used in the course fact table to refer to a deleted  course. 
+",technology,"The course technology (e.g., Tableau, SQL, Python, R, ...).
+"
+course_dim,"The course dimension provides descriptive data about a specific course.  Because the model considers users’ progress on all courses (i.e., even  courses that are no longer available), there is a specific row with the  id = -1. This row is used in the course fact table to refer to a deleted  course. 
+",topic,"The course topic  (e.g., Data visualization, Programmaing, Machine Learning, ...).
+"
+course_dim,"The course dimension provides descriptive data about a specific course.  Because the model considers users’ progress on all courses (i.e., even  courses that are no longer available), there is a specific row with the  id = -1. This row is used in the course fact table to refer to a deleted  course. 
+",xp,"The maxmimum number of XP a user can get by following the course.
+"
+course_dim,"The course dimension provides descriptive data about a specific course.  Because the model considers users’ progress on all courses (i.e., even  courses that are no longer available), there is a specific row with the  id = -1. This row is used in the course fact table to refer to a deleted  course. 
+",nb_hours_needed,"Time needed in hours to complete the course.
+"
+course_dim,"The course dimension provides descriptive data about a specific course.  Because the model considers users’ progress on all courses (i.e., even  courses that are no longer available), there is a specific row with the  id = -1. This row is used in the course fact table to refer to a deleted  course. 
+",slug,"The slug of the course
+"
+course_dim,"The course dimension provides descriptive data about a specific course.  Because the model considers users’ progress on all courses (i.e., even  courses that are no longer available), there is a specific row with the  id = -1. This row is used in the course fact table to refer to a deleted  course. 
+",description,"A description of the course.
+"
+course_dim,"The course dimension provides descriptive data about a specific course.  Because the model considers users’ progress on all courses (i.e., even  courses that are no longer available), there is a specific row with the  id = -1. This row is used in the course fact table to refer to a deleted  course. 
+",short_description,"A short description of the course.
+"
+course_dim,"The course dimension provides descriptive data about a specific course.  Because the model considers users’ progress on all courses (i.e., even  courses that are no longer available), there is a specific row with the  id = -1. This row is used in the course fact table to refer to a deleted  course. 
+",launched_date,"The date on which the course went live.
+"
+course_dim,"The course dimension provides descriptive data about a specific course.  Because the model considers users’ progress on all courses (i.e., even  courses that are no longer available), there is a specific row with the  id = -1. This row is used in the course fact table to refer to a deleted  course. 
+",id,"[DEPRECATED] Use course_id instead.
+"
+docs,A table with all table and column documentation.,table_name,The name of the table.
+docs,A table with all table and column documentation.,table_description,The description of the table.
+docs,A table with all table and column documentation.,column,The name of the column.
+docs,A table with all table and column documentation.,comment,The description of the column.
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",exercise_id,The unique id of the exercise id.
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",title,The title of the exercise.
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",type,"The type of exercise type  (e.g., NormalExercise, VideoExercise, MultipleChoiceExercise, ...)
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",number,"The number of the exercise in the chapter, accounting for subexercises. 
+This can be used to sort exercises in order."
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",xp,"The maxmimum number of XP a user can get by completing the exercise.
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",technology,"The course technology (e.g., Tableau, SQL, Python, R, ...)
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",topic,"The course topic  (e.g., Data visualization, Programmaing, Machine Learning, ...)
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",course_title,"The course title the exercise belongs to.
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",course_slug,"The course slug the exercise belongs to
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",course_xp,"The maximum number of XP a user can get by completing the course the  exercise belongs to.
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",course_description,"The course description the exercise belongs to.
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",course_short_description,"A shorter version of the course description the exercise belongs to.
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",course_launched_date,"Date at which the course went live.
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",chapter_title,"The chapter title the exercise belongs to.
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",chapter_slug,"The chapter slug the exercise belongs to.
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",chapter_xp,"The maximum number of XP a user can get by completing the chapter the  exercise belongs to.
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",chapter_nb_exercises,"The number of exercises in the chapter the exercise belongs to.
+"
+exercise_dim,"The exercise dimension provides descriptive data about a specific  exercise. Because the model considers users’ progress on all exercises  (i.e., even exercises that are no longer available), there is a specific  row with the id = -1. This row is used in the exercise fact table to  refer to a deleted exercise. 
+",id,"[DEPRECATED] Use exercise_id instead.
+"
+learning_assessment_fact,"The assessment fact table provides data about the users’ assessment results: score and percentile obtained and time spent on each assessment.
+",user_id,"The unique id of the user id.  References user_dim.id
+"
+learning_assessment_fact,"The assessment fact table provides data about the users’ assessment results: score and percentile obtained and time spent on each assessment.
+",assessment_id,"The unique id of the assessment.  References assessment_dim.id 
+"
+learning_assessment_fact,"The assessment fact table provides data about the users’ assessment results: score and percentile obtained and time spent on each assessment.
+",date_id,"The identifier of the date when the user worked on the assessment References dim_date.id
+"
+learning_assessment_fact,"The assessment fact table provides data about the users’ assessment results: score and percentile obtained and time spent on each assessment.
+",started_at,"The timestamp when the user started the assessment (as registered by the DataCamp application)
+"
+learning_assessment_fact,"The assessment fact table provides data about the users’ assessment results: score and percentile obtained and time spent on each assessment.
+",completed_at,"The timestamp when the user completed the assessment (as registered by  the DataCamp application). It is NULL when the user did not complete the  assessment.
+"
+learning_assessment_fact,"The assessment fact table provides data about the users’ assessment results: score and percentile obtained and time spent on each assessment.
+",score,The user score for the assessment.
+learning_assessment_fact,"The assessment fact table provides data about the users’ assessment results: score and percentile obtained and time spent on each assessment.
+",score_group,"The user score group for the assessment. A score of < 70 is  ""Novice"", 70 - 100 as ""Intermediate Lower"", 100 - 130 as  ""Intermediate"", 130 - 160 as ""Intermediate Upper"", and > 160 as ""Advanced"".
+"
+learning_assessment_fact,"The assessment fact table provides data about the users’ assessment results: score and percentile obtained and time spent on each assessment.
+",percentile,The percentile the user belongs in.
+learning_assessment_fact,"The assessment fact table provides data about the users’ assessment results: score and percentile obtained and time spent on each assessment.
+",time_spent,"The time (in seconds) the user spent on the assessment.
+"
+learning_chapter_fact,"The chapter fact table provides data about the users’ progress: XP gained  and time spent on each chapter. The table provides data for chapters that  can be no longer available (and deleted from our database). In this case,  the chapter_id value is set to -1 and links to a “deleted chapter” row in  the chapter_dim table.
+",user_id,"The unique id of the user. References to user_dim.user_id.
+"
+learning_chapter_fact,"The chapter fact table provides data about the users’ progress: XP gained  and time spent on each chapter. The table provides data for chapters that  can be no longer available (and deleted from our database). In this case,  the chapter_id value is set to -1 and links to a “deleted chapter” row in  the chapter_dim table.
+",chapter_id,"The unique id of the chapter. References to chapter_dim.chapter_id.
+"
+learning_chapter_fact,"The chapter fact table provides data about the users’ progress: XP gained  and time spent on each chapter. The table provides data for chapters that  can be no longer available (and deleted from our database). In this case,  the chapter_id value is set to -1 and links to a “deleted chapter” row in  the chapter_dim table.
+",date_id,"The date on which the user worked on the chapter.  References to dim_date.id
+"
+learning_chapter_fact,"The chapter fact table provides data about the users’ progress: XP gained  and time spent on each chapter. The table provides data for chapters that  can be no longer available (and deleted from our database). In this case,  the chapter_id value is set to -1 and links to a “deleted chapter” row in  the chapter_dim table.
+",started_at,"The timestamp when the user started the chapter  (as registered by the DataCamp application).
+"
+learning_chapter_fact,"The chapter fact table provides data about the users’ progress: XP gained  and time spent on each chapter. The table provides data for chapters that  can be no longer available (and deleted from our database). In this case,  the chapter_id value is set to -1 and links to a “deleted chapter” row in  the chapter_dim table.
+",completed_at,"The timestamp when the user completed the chapter  (as registered by the DataCamp application).
+"
+learning_chapter_fact,"The chapter fact table provides data about the users’ progress: XP gained  and time spent on each chapter. The table provides data for chapters that  can be no longer available (and deleted from our database). In this case,  the chapter_id value is set to -1 and links to a “deleted chapter” row in  the chapter_dim table.
+",time_spent,"The time (in seconds) the user spent on the chapter.
+"
+learning_chapter_fact,"The chapter fact table provides data about the users’ progress: XP gained  and time spent on each chapter. The table provides data for chapters that  can be no longer available (and deleted from our database). In this case,  the chapter_id value is set to -1 and links to a “deleted chapter” row in  the chapter_dim table.
+",xp,"The XP the user gained by working on the chapter.
+"
+learning_course_fact,"The course fact table provides data about the users’ progress: XP gained and time spent on each course. The table provides data for courses that can be  no longer available (and deleted from our database). In this case, the course  value is set to -1 and links to a “deleted course” row in the course_dim table.
+",user_id,"The unique id of the user id. References user_dim.user_id
+"
+learning_course_fact,"The course fact table provides data about the users’ progress: XP gained and time spent on each course. The table provides data for courses that can be  no longer available (and deleted from our database). In this case, the course  value is set to -1 and links to a “deleted course” row in the course_dim table.
+",course_id,"The unique id of the course. References course_dim.id
+"
+learning_course_fact,"The course fact table provides data about the users’ progress: XP gained and time spent on each course. The table provides data for courses that can be  no longer available (and deleted from our database). In this case, the course  value is set to -1 and links to a “deleted course” row in the course_dim table.
+",date_id,"The unique id of the date on which the user worked on the course. References to dim_date.id
+"
+learning_course_fact,"The course fact table provides data about the users’ progress: XP gained and time spent on each course. The table provides data for courses that can be  no longer available (and deleted from our database). In this case, the course  value is set to -1 and links to a “deleted course” row in the course_dim table.
+",started_at,"The timestamp when the user started the course (as registered by the DataCamp application).
+"
+learning_course_fact,"The course fact table provides data about the users’ progress: XP gained and time spent on each course. The table provides data for courses that can be  no longer available (and deleted from our database). In this case, the course  value is set to -1 and links to a “deleted course” row in the course_dim table.
+",completed_at,"The timestamp when the user started the course (as registered by the  DataCamp application). It is NULL when the user has NOT completed the  course yet.
+"
+learning_course_fact,"The course fact table provides data about the users’ progress: XP gained and time spent on each course. The table provides data for courses that can be  no longer available (and deleted from our database). In this case, the course  value is set to -1 and links to a “deleted course” row in the course_dim table.
+",time_spent,"The time (in seconds) the user spent on the course.
+"
+learning_course_fact,"The course fact table provides data about the users’ progress: XP gained and time spent on each course. The table provides data for courses that can be  no longer available (and deleted from our database). In this case, the course  value is set to -1 and links to a “deleted course” row in the course_dim table.
+",xp,"The XP the user gained by working on the course.
+"
+learning_exercise_fact,"The exercise fact table provides data about the users’ progress: XP gained  and time spent on each exercise. The table provides data for exercises that  can be no longer available (and deleted from our database). In this case,  the exercise_id value is set to -1 and links to a ""deleted exercise"""" row in  the exercise_dim table.Fact table for exercise content. It provides  engagement and xp measurements on exercise.
+",user_id,The unique user id. Reference to user_dim.id.
+learning_exercise_fact,"The exercise fact table provides data about the users’ progress: XP gained  and time spent on each exercise. The table provides data for exercises that  can be no longer available (and deleted from our database). In this case,  the exercise_id value is set to -1 and links to a ""deleted exercise"""" row in  the exercise_dim table.Fact table for exercise content. It provides  engagement and xp measurements on exercise.
+",exercise_id,The unique exercise_id. Reference to exercise_dim.id.
+learning_exercise_fact,"The exercise fact table provides data about the users’ progress: XP gained  and time spent on each exercise. The table provides data for exercises that  can be no longer available (and deleted from our database). In this case,  the exercise_id value is set to -1 and links to a ""deleted exercise"""" row in  the exercise_dim table.Fact table for exercise content. It provides  engagement and xp measurements on exercise.
+",date_id,The date id. Reference to date_dim.id.
+learning_exercise_fact,"The exercise fact table provides data about the users’ progress: XP gained  and time spent on each exercise. The table provides data for exercises that  can be no longer available (and deleted from our database). In this case,  the exercise_id value is set to -1 and links to a ""deleted exercise"""" row in  the exercise_dim table.Fact table for exercise content. It provides  engagement and xp measurements on exercise.
+",started_at,"The timestamp at which the user started the exercise (as registered by the  DataCamp application).
+"
+learning_exercise_fact,"The exercise fact table provides data about the users’ progress: XP gained  and time spent on each exercise. The table provides data for exercises that  can be no longer available (and deleted from our database). In this case,  the exercise_id value is set to -1 and links to a ""deleted exercise"""" row in  the exercise_dim table.Fact table for exercise content. It provides  engagement and xp measurements on exercise.
+",completed_at,"The timestamp at which the user completed the exercise (as registered by the  DataCamp application).
+"
+learning_exercise_fact,"The exercise fact table provides data about the users’ progress: XP gained  and time spent on each exercise. The table provides data for exercises that  can be no longer available (and deleted from our database). In this case,  the exercise_id value is set to -1 and links to a ""deleted exercise"""" row in  the exercise_dim table.Fact table for exercise content. It provides  engagement and xp measurements on exercise.
+",time_spent,"How much time (in seconds) the user spent on the exercise?
+"
+learning_exercise_fact,"The exercise fact table provides data about the users’ progress: XP gained  and time spent on each exercise. The table provides data for exercises that  can be no longer available (and deleted from our database). In this case,  the exercise_id value is set to -1 and links to a ""deleted exercise"""" row in  the exercise_dim table.Fact table for exercise content. It provides  engagement and xp measurements on exercise.
+",xp,"How many XP did the user gain by completing the exercise?
+"
+learning_practice_fact,Fact table for project content. It provides engagement and xp measurements on projects. This table includes practices (aka challenges) after practice replaced challenges,user_id,"The user id (internal main-app id) [PK], [FK to user_dim.id]"
+learning_practice_fact,Fact table for project content. It provides engagement and xp measurements on projects. This table includes practices (aka challenges) after practice replaced challenges,practice_id,"The practice id the user started (internal mobile_app pools id). [PK], [FK to practice_dim.id]"
+learning_practice_fact,Fact table for project content. It provides engagement and xp measurements on projects. This table includes practices (aka challenges) after practice replaced challenges,date_id,"The date at which the user worked on the practice [PK], [FK to dim_date.id]"
+learning_practice_fact,Fact table for project content. It provides engagement and xp measurements on projects. This table includes practices (aka challenges) after practice replaced challenges,started_at,The date at which the user started the practice
+learning_practice_fact,Fact table for project content. It provides engagement and xp measurements on projects. This table includes practices (aka challenges) after practice replaced challenges,completed_at,The date at which the user completed the practice. It is NULL when the user did not complete the practice
+learning_practice_fact,Fact table for project content. It provides engagement and xp measurements on projects. This table includes practices (aka challenges) after practice replaced challenges,is_mobile,Whether the user did the practice on mobile or in the browser
+learning_practice_fact,Fact table for project content. It provides engagement and xp measurements on projects. This table includes practices (aka challenges) after practice replaced challenges,time_spent,How much time (in seconds) the user spent on the practice
+learning_practice_fact,Fact table for project content. It provides engagement and xp measurements on projects. This table includes practices (aka challenges) after practice replaced challenges,xp,How many XP did the user gain by completing the practice
+learning_project_fact,"The project fact table provides data about the users’ project progress:  time spent and XP gained.
+",user_id,"The unique id of the user. References user_dim.user_id
+"
+learning_project_fact,"The project fact table provides data about the users’ project progress:  time spent and XP gained.
+",project_id,"The unique id of the project. References project_dim.project_id
+"
+learning_project_fact,"The project fact table provides data about the users’ project progress:  time spent and XP gained.
+",date_id,"The id of the date on which the user worked on the project. References date_dim.date_id
+"
+learning_project_fact,"The project fact table provides data about the users’ project progress:  time spent and XP gained.
+",started_at,"The timestamp when the user started the project (as registered by the DataCamp application).
+"
+learning_project_fact,"The project fact table provides data about the users’ project progress:  time spent and XP gained.
+",completed_at,"The timestamp when the user completed the project (as registered by the  DataCamp application). It is NULL when the user has NOT completed the  project yet.
+"
+learning_project_fact,"The project fact table provides data about the users’ project progress:  time spent and XP gained.
+",time_spent,"The time (in seconds) the user spent on the project.
+"
+learning_project_fact,"The project fact table provides data about the users’ project progress:  time spent and XP gained.
+",xp,"The XP the user gained by working on the project.
+"
+learning_track_content_fact,Fact table for track content.,group_id,The id of the group.
+learning_track_content_fact,Fact table for track content.,user_id,The id of the user.
+learning_track_content_fact,Fact table for track content.,track_version_id,The id of the track version.
+learning_track_content_fact,Fact table for track content.,content_id,"The id of the content, a concatenation of content type and id."
+learning_track_content_fact,Fact table for track content.,started_at,The timestamp when the user enrolled in the track.
+learning_track_content_fact,Fact table for track content.,completed_at,The timestamp when the user completed the track.
+learning_track_content_fact,Fact table for track content.,xp,The xp gained by completing the content.
+learning_track_content_fact,Fact table for track content.,nb_seconds,The total number of seconds spent on the content.
+learning_track_fact,Fact table for tracks.,group_id,The id of the group.
+learning_track_fact,Fact table for tracks.,user_id,The id of the user.
+learning_track_fact,Fact table for tracks.,track_version_id,The id of the track version.
+learning_track_fact,Fact table for tracks.,started_at,The timestamp when the user enrolled in the track.
+learning_track_fact,Fact table for tracks.,completed_at,The timestamp when the user completed the track.
+learning_track_fact,Fact table for tracks.,is_currently_active,A boolean indicating if the user is currently active in the track
+practice_dim,List of all practices,practice_id,The practice id (internal mobile_app.pools id) [PK]
+practice_dim,List of all practices,title,The practice name
+practice_dim,List of all practices,status,"The practice status (HIDDEN, LIVE)"
+practice_dim,List of all practices,technology,The practice's technology type
+practice_dim,List of all practices,xp,Xp gained by completing the practice
+practice_dim,List of all practices,id,"[DEPRECATED] Use practice_id instead.
+"
+project_dim,"The project dimension provides descriptive data about a specific project. 
+",project_id,The unique id of the project.
+project_dim,"The project dimension provides descriptive data about a specific project. 
+",title,The title of the course.
+project_dim,"The project dimension provides descriptive data about a specific project. 
+",technology,"The course technology (R, Python, SQL)"
+project_dim,"The project dimension provides descriptive data about a specific project. 
+",xp,"The maxmimum number of XP a user can get by completing the project.
+"
+project_dim,"The project dimension provides descriptive data about a specific project. 
+",nb_hours_needed,"The number of hours needed to complete the project.
+"
+project_dim,"The project dimension provides descriptive data about a specific project. 
+",is_guided,"A boolean indicating whether the project is guided or not.
+"
+project_dim,"The project dimension provides descriptive data about a specific project. 
+",description,"A description of the project.
+"
+project_dim,"The project dimension provides descriptive data about a specific project. 
+",short_description,"A short description of the project.
+"
+project_dim,"The project dimension provides descriptive data about a specific project. 
+",id,"[DEPRECATED] Use project_id instead.
+"
+team_dim,List of all enterprise teams,id,The team id (internal enterprise-app id) [PK]
+team_dim,List of all enterprise teams,name,The team name
+team_dim,List of all enterprise teams,slug,The team slug
+team_dim,List of all enterprise teams,created_date,The team's creation date
+team_dim,List of all enterprise teams,updated_date,The team's updated date
+team_dim,List of all enterprise teams,deleted_date,The team's deleted date
+track_content_dim,"List of content in all live tracks. This table has one row per 
+track_version and content item. It currently only includes courses and 
+projects. Note that a content item can belong to multiple tracks, and
+different versions of a track might contain different content items.",track_version_id,The id of the track version.
+track_content_dim,"List of content in all live tracks. This table has one row per 
+track_version and content item. It currently only includes courses and 
+projects. Note that a content item can belong to multiple tracks, and
+different versions of a track might contain different content items.",track_id,The id of the track.
+track_content_dim,"List of content in all live tracks. This table has one row per 
+track_version and content item. It currently only includes courses and 
+projects. Note that a content item can belong to multiple tracks, and
+different versions of a track might contain different content items.",content_id,"The id of the content, a concatenation of content type and id."
+track_content_dim,"List of content in all live tracks. This table has one row per 
+track_version and content item. It currently only includes courses and 
+projects. Note that a content item can belong to multiple tracks, and
+different versions of a track might contain different content items.",content_type,The content type (course / project).
+track_content_dim,"List of content in all live tracks. This table has one row per 
+track_version and content item. It currently only includes courses and 
+projects. Note that a content item can belong to multiple tracks, and
+different versions of a track might contain different content items.",content_title,The title of the content.
+track_content_dim,"List of content in all live tracks. This table has one row per 
+track_version and content item. It currently only includes courses and 
+projects. Note that a content item can belong to multiple tracks, and
+different versions of a track might contain different content items.",position,The position of the content in the track version.
+track_content_dim,"List of content in all live tracks. This table has one row per 
+track_version and content item. It currently only includes courses and 
+projects. Note that a content item can belong to multiple tracks, and
+different versions of a track might contain different content items.",xp,The total xp earned on completion of content.
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",track_version_id,The id of the track version.
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",track_id,The id of the track.
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",version_number,The version of the track.
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",title,The title concatenated with subtitle of the track version.
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",technology,The technology of the track.
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",category,The category of the track.
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",short_description,A short description of the track
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",published_live_at,The timestamp for when the track version was published live.
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",archived_at,The timestamp for when the track version was archived.
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",is_current_version,A boolean indicating if this is the current version.
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",is_custom,A boolean indicating if this is a custom track.
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",nb_courses,The number of courses in the track version.
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",nb_projects,The number of projects in the track version.
+track_dim,"List of all versions of live tracks, along with their title, technology,  
+and descriptions. This table has one row for every track version, for 
+tracks that are live.",xp,The total xp gained on completion of the track.
+user_dim,List of all enterprise users,user_id,The user id (internal main-app id) [PK]
+user_dim,List of all enterprise users,first_name,The user first name
+user_dim,List of all enterprise users,last_name,The user last name
+user_dim,List of all enterprise users,email,The user email
+user_dim,List of all enterprise users,slug,The slug to the user profile
+user_dim,List of all enterprise users,registered_at,When the user registered
+user_dim,List of all enterprise users,deleted_at,When the user was deleted
+user_dim,List of all enterprise users,last_visit_at,When the user visited (browsed) the plarform for the last time
+user_dim,List of all enterprise users,last_time_spent_at,"When the user spent time on the platform (campus, challenges, projects, mobile) for the last time"
+user_dim,List of all enterprise users,onboarding_completed_at,When the user completed their onboarding
+user_dim,List of all enterprise users,first_content_completed_at,When the user completed their first content
+user_dim,List of all enterprise users,id,"[DEPRECATED] Use user_id instead
+"
+user_team_bridge,Bridge table to link users to their teams,user_id,The user id (internal main-app id) [PK]
+user_team_bridge,Bridge table to link users to their teams,team_id,The team id (internal enterprise-app id) [PK]
+user_team_bridge,Bridge table to link users to their teams,joined_team_date,Date at which the user joined the team
+user_team_bridge,Bridge table to link users to their teams,left_team_date,Date at which the user left the team
