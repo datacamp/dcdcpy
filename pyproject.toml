@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "dcdcpy"
+version = "0.1.0"
+description = "DataCamp Data Connector utilities in Python."
+authors = [
+    "Richard Cotton <richie@datacamp.com>", 
+    "Ramnath Vaidyanathan <ramnath@datacamp.com>"
+]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.10"
+awswrangler = "^2.12.1"
+boto3 = "^1.17.22"
+pandas = "^1.2.4"
+Jinja2 = "^3.0.1"
+pyathena = "^2.3.0"
+
+[tool.poetry.dev-dependencies]
+environs = "^9.3.5"
+black = {version = "^21.10b0", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
