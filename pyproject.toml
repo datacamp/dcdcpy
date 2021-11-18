@@ -2,7 +2,10 @@
 name = "dcdcpy"
 version = "0.1.0"
 description = "DataCamp Data Connector utilities in Python."
-authors = ["Richard Cotton"]
+authors = [
+    "Richard Cotton <richie@datacamp.com>", 
+    "Ramnath Vaidyanathan <ramnath@datacamp.com>"
+]
 license = "MIT"
 readme = "README.md"
 
