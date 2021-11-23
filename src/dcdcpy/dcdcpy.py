@@ -12,7 +12,7 @@ from IPython.display import display, Markdown
 @lru_cache(maxsize=None)
 def list_tables_s3():
     s3 = boto3.resource("s3")
-    my_bucket = s3.Bucket(os.getenv("AWS_BUCKET"))
+    my_bucket = s3.Bucket(os.getenv("AWS_S3_BUCKET_NAME"))
     return [
         obj.key.split("/")[1].split(".")[0]
         for obj in my_bucket.objects.filter(Delimiter="/", Prefix=f"latest/")
@@ -41,12 +41,14 @@ def get_docs_bic():
 
 @lru_cache(maxsize=None)
 def read_table_s3(table_name, conn=None, date="latest"):
-    return wr.s3.read_csv(f"s3://{os.getenv('AWS_BUCKET')}/{date}/{table_name}.csv")
+    return wr.s3.read_csv(
+        f"s3://{os.getenv('AWS_S3_BUCKET_NAME')}/{date}/{table_name}.csv"
+    )
 
 
 @lru_cache(maxsize=None)
 def read_table_athena(table_name, conn, date="latest"):
-    s3_bucket = os.getenv("AWS_BUCKET")
+    s3_bucket = os.getenv("AWS_S3_BUCKET_NAME")
     return pd.read_sql_query(f'SELECT * FROM "{s3_bucket}"."{table_name}"', conn)
 
 
@@ -110,7 +112,7 @@ class DataConnector:
         else:
             self.conn = connect(
                 s3_staging_dir=os.getenv("AWS_ATHENA_S3_STAGING_DIR"),
-                region_name=os.getenv("AWS_REGION"),
+                region_name=os.getenv("AWS_DEFAULT_REGION"),
             )
         for table in self.tables:
             setattr(
