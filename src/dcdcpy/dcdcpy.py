@@ -89,6 +89,11 @@ class ReadTable:
     def __call__(self, *args, **kwargs):
         return self.table(self.table_name, self.conn, self.date)
 
+    def __repr__(self):
+        tpl = Template(TEMPLATE)
+        out = tpl.render(HELP_DOCS[self.table_name])
+        return out
+
     def _repr_html_(self):
         tpl = Template(TEMPLATE)
         out = tpl.render(HELP_DOCS[self.table_name])

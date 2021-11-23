@@ -38,8 +38,41 @@ dc.assessment_dim()
 You can also print the documentation for each table by printing the method without invoking it. 
 
 ```python
-dc$assessment_dim
+dc.assessment_dim
 ```
+
+---
+### Assessment Dim
+
+#### Description
+
+The assessment dimension provides descriptive data about a specific  assessment.
+
+
+#### Columns
+
+assessment_id
+
+> The unique id of the assessment id.
+
+title
+
+> The title of the assessment.
+
+slug
+
+> The slug of The assessment.
+
+technology
+
+> The assessment technology (e.g., Python, R, SQL)
+
+
+id
+
+> [DEPRECATED] Use assessment_id instead.
+
+---
 
 
 All the data accessors are memoized and will cache the results in memory when they are run for the first time. This should speed up analysis considerably since the data is already cached in memory.
