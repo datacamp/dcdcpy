@@ -30,6 +30,9 @@ def get_docs_bic():
         doc = docs_bic.query("table_name == @table")
         data[table] = {
             "table_name": doc["table_name"].tolist()[0],
+            "table_title": " ".join(
+                [w.title() for w in doc["table_name"].tolist()[0].split("_")]
+            ),
             "table_description": doc["table_description"].tolist()[0],
             "columns": doc[["column", "description"]].to_dict(orient="records"),
         }
@@ -50,7 +53,7 @@ def read_table_athena(table_name, conn, date="latest"):
 HELP_DOCS = get_docs_bic()
 
 TEMPLATE = """
-### {{ table_name }}
+### {{ table_title }}
 
 #### Description
 
@@ -107,6 +110,6 @@ class DataConnector:
         for table in self.tables:
             setattr(
                 self,
-                table,
+                table.replace("learning_", ""),
                 ReadTable(table, date=self.date, conn=self.conn, source=self.source),
             )
