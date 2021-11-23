@@ -9,10 +9,22 @@ from pyathena import connect
 from IPython.display import display, Markdown
 
 
+def get_env_var_s3_bucket():
+    return os.getenv("AWS_S3_BUCKET_NAME") or os.getenv("AWS_BUCKET")
+
+
+def get_env_var_region():
+    return os.getenv("AWS_DEFAULT_REGION") or os.getenv("AWS_REGION")
+
+
+def get_env_var_athena_s3_staging_dir():
+    return os.getenv("AWS_ATHENA_S3_STAGING_DIR")
+
+
 @lru_cache(maxsize=None)
 def list_tables_s3():
     s3 = boto3.resource("s3")
-    my_bucket = s3.Bucket(os.getenv("AWS_S3_BUCKET_NAME"))
+    my_bucket = s3.Bucket(get_env_var_s3_bucket())
     return [
         obj.key.split("/")[1].split(".")[0]
         for obj in my_bucket.objects.filter(Delimiter="/", Prefix=f"latest/")
@@ -41,14 +53,12 @@ def get_docs_bic():
 
 @lru_cache(maxsize=None)
 def read_table_s3(table_name, conn=None, date="latest"):
-    return wr.s3.read_csv(
-        f"s3://{os.getenv('AWS_S3_BUCKET_NAME')}/{date}/{table_name}.csv"
-    )
+    return wr.s3.read_csv(f"s3://{get_env_var_s3_bucket()}/{date}/{table_name}.csv")
 
 
 @lru_cache(maxsize=None)
 def read_table_athena(table_name, conn, date="latest"):
-    s3_bucket = os.getenv("AWS_S3_BUCKET_NAME")
+    s3_bucket = get_env_var_s3_bucket()
     return pd.read_sql_query(f'SELECT * FROM "{s3_bucket}"."{table_name}"', conn)
 
 
@@ -111,8 +121,8 @@ class DataConnector:
             self.conn = None
         else:
             self.conn = connect(
-                s3_staging_dir=os.getenv("AWS_ATHENA_S3_STAGING_DIR"),
-                region_name=os.getenv("AWS_DEFAULT_REGION"),
+                s3_staging_dir=get_env_var_athena_s3_staging_dir(),
+                region_name=get_env_var_region(),
             )
         for table in self.tables:
             setattr(
