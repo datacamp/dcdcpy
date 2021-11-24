@@ -10,15 +10,36 @@ from IPython.display import display, Markdown
 
 
 def get_env_var_s3_bucket():
-    return os.getenv("AWS_S3_BUCKET_NAME") or os.getenv("AWS_BUCKET")
+    env_var = os.getenv("AWS_S3_BUCKET_NAME", os.getenv("AWS_BUCKET"))
+    if env_var is None:
+        raise EnvironmentError("The environment variable 'AWS_BUCKET' has not been set.")
+    return env_var
 
 
 def get_env_var_region():
-    return os.getenv("AWS_DEFAULT_REGION") or os.getenv("AWS_REGION")
+    env_var = os.getenv("AWS_DEFAULT_REGION", os.getenv("AWS_REGION"))
+    if env_var is None:
+        raise EnvironmentError("The environment variable 'AWS_REGION' has not been set.")
+    return env_var
 
+def get_env_var_aws_access_key():
+    env_var = os.getenv("AWS_ACCESS_KEY_ID")
+    if env_var is None:
+        raise EnvironmentError("The environment variable 'AWS_ACCESS_KEY_ID' has not been set.")
+    return env_var
+
+def get_env_var_aws_secret():
+    env_var = os.getenv("AWS_SECRET_ACCESS_KEY")
+    if env_var is None:
+        raise EnvironmentError("The environment variable 'AWS_SECRET_ACCESS_KEY' has not been set.")
+    return env_var
 
 def get_env_var_athena_s3_staging_dir():
-    return os.getenv("AWS_ATHENA_S3_STAGING_DIR")
+    env_var = os.getenv("AWS_ATHENA_S3_STAGING_DIR")
+    if env_var is None:
+        raise EnvironmentError("The environment variable 'AWS_ATHENA_S3_STAGING_DIR' has not been set.")
+    return env_var
+
 
 
 @lru_cache(maxsize=None)
