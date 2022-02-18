@@ -19,7 +19,7 @@ $ pip install git+https://github.com/datacamp/dcdcpy.git#egg=dcdcpy
 ## Getting Started
 
 Before you begin, you need to enable Data Connector in your DataCamp group, and 
-set S3 credentials as environment variables, as described in this [this Support article](https://support.datacamp.com/hc/en-us/articles/4405070893591-DataCamp-Data-Connector-A-Step-by-Step-Configuration-Guide-for-Automated-Data-Exports).
+set S3 credentials as environment variables, as described in this [this Support article](https://enterprise-docs.datacamp.com/data-connector/getting-started/storing-your-credentials).
 If in doubt, speak to your Customer Success Manager.
 
 ## Accessing Data
