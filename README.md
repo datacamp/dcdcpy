@@ -1,12 +1,15 @@
 # dcdcpy
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Lifecycle: deprecated](https://img.shields.io/badge/lifecycle-deprecated-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#deprecated)
 <!-- badges: end -->
 
 DataCamp Data Connector utilities in Python.
 
 This package contains utilities to work with DataCamp Data Connector. It is designed to be used by administrators and managers of DataCamp groups. Some prior experience of writing reports with Python is recommended.
+
+## DEPRECATION WARNING
+Warning, this package is no longer actively maintained! Please see the [announcement](https://enterprise-docs.datacamp.com/data-connector/data-connector-faq/deprecating-dcdcpy-and-dcdcr) for more information and alternatives.
 
 ## Installation
 
