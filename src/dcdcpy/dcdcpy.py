@@ -7,6 +7,7 @@ from functools import lru_cache
 from jinja2 import Template
 from pyathena import connect
 from IPython.display import display, Markdown
+from warnings import warn
 
 
 def get_env_var_s3_bucket():
@@ -135,6 +136,9 @@ class ReadTable:
 
 class DataConnector:
     def __init__(self, date="latest", source="s3"):
+        warn('This package is no longer actively maintained or supported by DataCamp, '
+             'please see https://enterprise-docs.datacamp.com/data-connector/data-connector-faq/deprecating-dcdcpy-and-dcdcr '
+             'for more information.')
         self.date = date
         self.source = source
         self.tables = list_tables_s3()
